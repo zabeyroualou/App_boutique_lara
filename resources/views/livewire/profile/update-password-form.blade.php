@@ -37,7 +37,8 @@ new class extends Component
         $this->dispatch('password-updated');
     }
 }; ?>
-
+@extends('dashboard')
+@extends('contenu')
 <section>
     <header>
         <h2 class="text-lg font-medium text-gray-900">
@@ -77,3 +78,4 @@ new class extends Component
         </div>
     </form>
 </section>
+@endsection

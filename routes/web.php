@@ -40,3 +40,5 @@ Route::get('/delProduits', [ProduitController::class, 'delete'])->name('produits
 //-------------------------------------------------------------------------------------------
 use App\Http\Controllers\CategorieController;
 Route::get('categories', [CategorieController::class,'index'])->name('categories');
+Route::get('listbyCategorie',[CategorieController::class, 'checkCat'])->name('listByCat');
+Route::get('listbyCategorie2',[CategorieController::class, 'checkCat2'])->name('listByCat2');

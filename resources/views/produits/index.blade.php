@@ -49,7 +49,7 @@
                                 <td> {{ $product->quantite }}</td>
                                 <td> {{ $product->prix }}</td>
                                 <td> {{ $product->description }}</td>
-                                <td> {{ $product->IdCategorie }}</td>
+                                <td> {{ $product->categorie_id }}</td>
                                 <td>
                                     <form action="{{ route('produits.destroy', $product->id) }}" method="post">
                                         @csrf
@@ -115,7 +115,7 @@
                 </ul>
             </nav> --}}
 
-            {{ $products->links() }}
+            {{-- {{ $products->links() }} --}}
         </div>
     </div>
   </section>

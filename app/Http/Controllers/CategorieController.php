@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Produit;
 use App\Models\Categories;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -15,6 +16,16 @@ class CategorieController extends Controller
     {
         $catgeories = DB::select('select * from categories');
         return view('Categories.divers');
+    }
+
+    public function checkCat(){
+        $products = DB::select('select * from produits where categorie_id = ?', [1]);
+        return view('produits.index', compact('products'));
+    }
+
+    public function checkCat2(){
+        $products = DB::select('select * from produits where categorie_id = ?', [2]);
+        return view('produits.index', compact('products'));
     }
 
     /**

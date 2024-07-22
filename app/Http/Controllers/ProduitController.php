@@ -34,7 +34,7 @@ class ProduitController extends Controller
     public function store(Request $request)
     {
         Produit::create($request->all());
-        return redirect()->route('produits.index')->with('success', 'New product added successfully.');
+        return redirect()->route('produits')->with('success', 'New product added successfully.');
     }
 
     /**

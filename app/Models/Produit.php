@@ -12,7 +12,7 @@ class Produit extends Model
 
     public function findAll(){
         $produits = DB::table('produits')
-            ->select('code' ,'nom', 'prix', 'quantite')
+            ->select('code','nom', 'prix', 'quantite')
             ->get();
     }
 
@@ -22,7 +22,8 @@ class Produit extends Model
         'nom',
         'quantite',
         'prix',
-        'description'
+        'description',
+        'categorie_id'
     ];
 
 

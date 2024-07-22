@@ -12,9 +12,19 @@ class Produit extends Model
 
     public function findAll(){
         $produits = DB::table('produits')
-            ->select('nom', 'prix', 'quantite')
+            ->select('code' ,'nom', 'prix', 'quantite')
             ->get();
     }
 
-    
+
+    protected $fillable = [
+        'code',
+        'nom',
+        'quantite',
+        'prix',
+        'description'
+    ];
+
+
+
 }

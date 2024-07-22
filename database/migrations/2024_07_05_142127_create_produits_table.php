@@ -18,7 +18,6 @@ return new class extends Migration
             $table->integer('quantite');
             $table->decimal('prix', 8, 2);
             $table->text('description')->nullable();
-            $table->string('id_catgorie');
             $table->unsignedBigInteger('categorie_id');
             $table->foreign('categorie_id')->references('id')->on('categories');
             $table->timestamps();

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProduitController;
+use App\Http\Controllers\LogoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +15,7 @@ use App\Http\Controllers\ProduitController;
 |
 */
 
-Route::view('/', 'welcome');
+// Route::get('/', 'pages.auth.login');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
@@ -25,6 +26,7 @@ Route::view('profile', 'profile')
     ->name('profile');
 
 require __DIR__.'/auth.php';
+Route::post('/logout',[LogoutController::class, 'logout'])->name('logout');
 
 
 Route::get('/produits',[ProduitController::class, 'index'])->name('produits');
